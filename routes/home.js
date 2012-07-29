@@ -1,8 +1,9 @@
 var main = require("..")
     , template = main.template
+    , redirect = require("redirecter")
 
 module.exports = home
 
 function home(req, res)  {
-    template(req, res, "index.ejs")
+    redirect(req, res, "/public/index.html")
 }
