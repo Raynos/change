@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NewChange</title>
+  <title>iLobby.org</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-fixed-top ">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+    	<a class="brand" href="<%= root_path %>">iLobby.org</a>
+		 	<%= render 'shared/nav' %>
+			</div>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
 
+<div class="container-fluid body">
+		<%= render :partial => 'shared/flash', :locals => { :flash => flash } %>
+		<%= yield %>
+	</div>
 </body>
 </html>
