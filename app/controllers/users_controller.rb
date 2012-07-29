@@ -17,10 +17,14 @@ class UsersController < ApplicationController
   	end
 
   	def edit
-  		render 'form'
+  		if current_user.rep_status == true
+  			@user = current_user
+  		else
+  			render "users_path"
+  		end
   	end
 
 	def show
-		@user = current_user
+		@user = User.find(params[:id])
 	end
 end

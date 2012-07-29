@@ -11,8 +11,6 @@
  *= require_self
  *= require_tree .
  */
-@import 'bootstrap';
-
 html {
         height: 100%;
         margin: 0;
@@ -49,6 +47,7 @@ body {
 }
 
 .button {
+        margin-left: 20px;
         font-family: "Lato", "Helvetica", Helvetica, Arial, sans-serif;
         font-size: 1.2em;
         letter-spacing: 0.15em;
@@ -86,9 +85,67 @@ body {
         border-color: #006699;
 }
 
+input, textarea {
+        display: block;
+        width: 600px;
+}
+
+label {
+        font-weight: bold;
+}
+
+.causeDescription {
+        color: #AAAAAA;
+}
+
+.raised {
+        float: right;
+        font-size: 17px;
+}
+
+.raised  span {
+        font-size: 24px;
+}
+
 .right {
         margin-left: 780px;
         margin-top: 20px;
+}
+
+.right2 {
+        margin-left: 380px;
+        margin-top: 20px;
+}
+
+.right3 {
+        margin-left: 480px;
+        margin-top: 20px;
+}
+
+.formItem span {
+        display: inline-block;
+        width: 200px;
+        color: #AAAAAA;
+        text-align: right;
+}
+
+.formItem input {
+        margin-left: 10px;
+        display: inline-block;
+        width: 300px;
+}
+
+.loginForm {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 170px;
+        position: relative;
+        display: block;
+}
+
+.loginForm h1 {
+        text-align: center;
 }
 
 .shadow {
@@ -204,6 +261,19 @@ body {
 .mini-pict img {
         width: 60px;
         height: 60px;
+}
+
+.big-pict {
+        marging: 5px;
+        margin-right: 20px;
+        float: left;
+        padding: 5px;
+        background-color: #666666;
+}
+
+.big-pict img {
+        width: 150px;
+        height: 150px;
 }
 
 .list-item .name {

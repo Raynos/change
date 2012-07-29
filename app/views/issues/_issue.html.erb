@@ -1,11 +1,11 @@
 <% issues.each do |issue| %>
-    <a href="" class="list-item">
+    <a href="/issues/<%= issue.id %>" class="list-item">
         <div class="mini-pict">
-            <img src="images/pict.png">
+            <img src="assets/pict.png">
         </div>
         <div class="name"><%= issue.user.name %></div>
         <div class="location"><%= issue.user.location %></div>
-        <div class="title"><%= issue.title %></div>
+        <div class="title"><%= issue.title[0,60] %></div>
         <div class="description"><%= issue.description[0, 160] %></div>
         <div class="amount"><%= issue.sponsorships.sum(:amount) %></div>
     </a>
