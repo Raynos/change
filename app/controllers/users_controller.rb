@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
 
-  def show_profile
+  def show
     user = current_user
     @name = user.name
     @location = user.location
