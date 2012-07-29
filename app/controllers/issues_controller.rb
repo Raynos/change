@@ -8,10 +8,6 @@ class IssuesController < ApplicationController
     @issue = Issue.find(params[:id])
   end
   
-  def update
-    
-  end
-  
   def delete
     @issue = Issue.find(params[:id])
     @issue.destroy
@@ -31,4 +27,8 @@ class IssuesController < ApplicationController
   def new
   	@issue = Issue.new
   end  
+
+  def search
+    @issues = Issue.search params[:search]
+  end
 end

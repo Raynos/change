@@ -1,14 +1,11 @@
 <html>
 	<body>
 		<h1>Issues</h1>
+		<% issues = @issues %>
+  </div>
 		<ul>
-			<% @issues.each do |issue| %>
-				<ul>
-					<li><%= link_to issue.title, issue  %></li>
-					<li><%= issue.description[0,160] %></li>
-					<li><%= issue.user.location %><%= issue.user.name %></li>
-				</ul>
-			<% end %>
+			<%= render :partial => 'issue', :locals => {:issues => issues} %>
 		</ul>		
 	</body>
 </html>
+

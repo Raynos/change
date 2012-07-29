@@ -5,3 +5,7 @@
 <div>Championed Issues</div>
 <div>My Issues</div>
 
+<% if current_user.id == @user.id %>
+	<%= link_to "Edit", edit_user_path(@user) %>
+<% end %>
+

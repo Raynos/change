@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     	end    
   	end
 
+  	def edit
+  		render 'form'
+  	end
+
 	def show
 		@user = current_user
 	end

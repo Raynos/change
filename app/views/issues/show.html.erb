@@ -1,10 +1,10 @@
-<head>Issue</head>
+<head><h3><%= @issue.title %></h3></head>
 <body>
 	<div>
 		<%= link_to "Sponsor this Issue", new_issue_sponsorship_path(params[:id]) %>
 	</div>
 	<div>
-		<%= @issue.title %>
+		<%= link_to "Follow this Issue",
 	</div>
 	<div>
 		<%= @issue.description %>

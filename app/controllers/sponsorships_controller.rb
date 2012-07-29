@@ -2,6 +2,7 @@ class SponsorshipsController < ApplicationController
 
 	def new
 		@sponsorship = current_user.sponsorships.new(params[:sponsorship])
+		@sponsorship.issue_id = params[:issue_id]
 		@sponsorship.amount = 10
 		@sponsorship.save
 		redirect_to root_path

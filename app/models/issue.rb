@@ -5,6 +5,11 @@ class Issue < ActiveRecord::Base
   belongs_to :user
   has_many :users, :through => :sponsorships
   has_many :sponsorships
+
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    find(:all, :conditions => ['title LIKE ? OR description LIKE?', search_condition, search_condition])
+  end
   
   
 end
