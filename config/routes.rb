@@ -1,6 +1,10 @@
 NewChange::Application.routes.draw do
   devise_for :users
-  resources :users
+  resources :users do
+    member do
+      get 'register_rep'
+    end
+  end
   
   resources :issues do
   end

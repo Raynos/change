@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   
   has_many :sponsorships
   has_many :issues, :through => :sponsorships
+
+
+  
 end

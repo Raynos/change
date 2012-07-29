@@ -3,8 +3,14 @@
 		<body>
 			Issues
 			<ul>
-				<% %>	
-			</ul>
+				<% @issues.each do |issue| %>
+					<ul>
+						<li><%= @issue.title %></li>
+						<li><%= @issue.description[0,160] %></li>
+						<li><%= @issue.user.location %><%= @issue.user.name %></li>
+					</ul>
+				<% end %>
+			</ul>		
 		</body>
 	</h1>
 </html>

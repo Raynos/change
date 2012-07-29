@@ -1,0 +1,28 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_area :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+    <div class="field">
+    <%= f.label :twitter_handle %><br />
+    <%= f.text_field :twitter_handle %>
+  </div>
+  <div class="field">
+    <%= f.submit :class=> "btn btn-inverse btn-large" %>
+  </div>
+<% end %>
