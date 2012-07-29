@@ -1,11 +1,15 @@
-<html>
-	<body>
-		<h1>Issues</h1>
-		<% issues = @issues %>
-  </div>
-		<ul>
-			<%= render :partial => 'issue', :locals => {:issues => issues} %>
-		</ul>		
-	</body>
-</html>
+<div class="content">
+    <div class="column">
+        <div class="img123"></div>
+        <div class="separation-line"></div>
+        <div class="featured">Feature Causes</div>
 
+        <% issues = @issues %>
+        <%= render :partial => 'issue', :locals => {:issues => issues} %>
+        
+        <div class="right"><a class="button" href="/">See all</a></div>
+        <div class="right"><a class="button" href="/issues/new">
+            New Issue
+        </a></div>
+    </div>
+</div>

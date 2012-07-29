@@ -1,7 +1,12 @@
-<ul>
-	<% issues.each do |issue| %>
-		<li><%= link_to issue.title, issue  %></li>
-		<li><%= issue.description[0,160] %></li>
-		<li><%= issue.user.location %> | <%= link_to issue.user.name, issue.user %> | $<%= issue.sponsorships.sum(:amount) %></li>
-	<% end %>
-</ul>
+<% issues.each do |issue| %>
+    <a href="" class="list-item">
+        <div class="mini-pict">
+            <img src="images/pict.png">
+        </div>
+        <div class="name"><%= issue.user.user.name %></div>
+        <div class="location"><%= issue.user.location %></div>
+        <div class="title"><%= issue.title %></div>
+        <div class="description"><%= issue.description[0, 160] %></div>
+        <div class="amount"><%= issue.sponsorships.sum(:amount) %></div>
+    </a>
+<% end %>

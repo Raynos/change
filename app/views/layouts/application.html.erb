@@ -1,27 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-  <title>iLobby.org</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="navbar navbar-fixed-top ">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-    	<a class="brand" href="<%= root_path %>">iLobby.org</a>
-		 	<%= render 'shared/nav' %>
-			</div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Find, Empower and Change</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="page">
+      <%= render 'shared/nav' %>
+      <%= yield %>
+      <%= render 'shared/footer' %>
     </div>
-  </div>
-</div>
-
-
-<div class="container-fluid body">
-		<%= render :partial => 'shared/flash', :locals => { :flash => flash } %>
-		<%= yield %>
-	</div>
-  
-</body>
+  </body>
 </html>
