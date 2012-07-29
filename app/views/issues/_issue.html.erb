@@ -1,6 +1,6 @@
 <ul>
 	<% issues.each do |issue| %>
-		<li><%= link_to issue.title, issue  %></li>
+		<li><%= link_to issue.title[0,60], issue  %></li>
 		<li><%= issue.description[0,160] %></li>
 		<li><%= issue.user.location %> | <%= link_to issue.user.name, issue.user %> | $<%= issue.sponsorships.sum(:amount) %></li>
 	<% end %>
