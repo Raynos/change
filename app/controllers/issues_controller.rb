@@ -13,15 +13,12 @@ class IssuesController < ApplicationController
   end
   
   def delete
-    
+    @issue = Issue.find(params[:id])
+    @issue.destroy
+    redirect_to root_url
   end
 
   def new
   	@issue = Issue.new
-  end
-
-  def register_rep
-    
-  end
-  
+  end  
 end

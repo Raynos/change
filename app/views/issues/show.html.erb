@@ -4,16 +4,16 @@
 		Pledge Button
 	</div>
 	<div>
-		Issue Name
+		<%= @issue.title %>
 	</div>
 	<div>
-		Issue Description
+		<%= @issue.description %>
 	</div>
 	<div>
-		Issue Plan
+		<%= @issue.plan %>
 	</div>
 	<div>
-		Rep Name, Bio, Email Address
+		<%= @issue.user.name %><%= @issue.user.bio %><%= @issue.user.email_address %>
 	</div>
 	<div>
 		Twitter Feed

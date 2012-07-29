@@ -1,5 +1,8 @@
  <ul class="nav pull-right">
 	<% if user_signed_in? %>
+		<% if current_user.rep_status == true %>
+		<li class="active submit"><a href ="<%= new_issue_path %>"><i class='icon-file icon-white'></i> Champion an Issue</a></li>
+	<% end %>
 		<li class="dropdown">
 			<a href="#"
 	    class="dropdown-toggle"
@@ -19,5 +22,5 @@
 		<li class="divider"></li>
 		<li><%= link_to "Login", new_user_session_path %></li>
 	<% end %>
-	<li class="active submit"><a href ="<%= new_issue_path %>"><i class='icon-file icon-white'></i> Submit</a></li>
+
 </ul>
