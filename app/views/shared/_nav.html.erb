@@ -1,0 +1,24 @@
+ <ul class="nav pull-right">
+	<% if user_signed_in? %>
+		<li class="dropdown">
+			<a href="#"
+	    class="dropdown-toggle"
+	    data-toggle="dropdown">
+	    <i class="icon-user icon-white"></i> Account
+	    <b class="caret"></b>
+			</a>
+			<ul class="dropdown-menu">
+				<li><a href="#"><strong><%= current_user.email %></strong></a></li>
+				<li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+				<li class="divider"></li>
+				<li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+				<li><a href="#"><i class="icon-heart"></i><%= current_user.karma_points %> Karma Points</a></li>
+		</ul>
+	</li>
+	<% else %>
+		<li><%= link_to "Sign up", new_user_registration_path %></li>
+		<li class="divider"></li>
+		<li><%= link_to "Login", new_user_session_path %></li>
+	<% end %>
+	<li class="active submit"><a href ="<%= new_issue_path %>"><i class='icon-file icon-white'></i> Submit</a></li>
+</ul>

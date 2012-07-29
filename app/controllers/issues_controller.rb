@@ -15,5 +15,9 @@ class IssuesController < ApplicationController
   def delete
     
   end
+
+  def new
+  	@issue = Issue.new
+  end
   
 end
