@@ -18,6 +18,16 @@ class IssuesController < ApplicationController
     redirect_to root_url
   end
 
+  def create
+    @issue = current_user.issues.new(params[:issue])
+    if @issue.save
+      flash[:messages] = "Thank you for your submission!"
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   def new
   	@issue = Issue.new
   end  
