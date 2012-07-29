@@ -45,23 +45,5 @@ class IssuesController < ApplicationController
       redirect_to :action => "register_rep", :notice => "You're on your way to championing an issue. Please provide some additional information."       
     end  
   end
-
-  def register_rep
-    user= User.find_by_id(session[:uid])
-    @bio = user.bio
-    @location= user.location
-    @twitter_handle= user.twitter_handle
-    if request.post? 
-      user.location = params[:location]
-      user.twitter_handle = params[:twitter_handle]
-      user.bio = params[:bio]
-      user.rep_status = 1
-      if user.save
-        redirect_to :action => "create_issue" 
-      else
-        redirect_to :action => "register_rep", :notice => "An error has occurred. Please try again."
-      end
-    end    
-  end
   
 end
