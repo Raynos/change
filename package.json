@@ -1,0 +1,16 @@
+{
+  "name": "node-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "routil-static": "0.0.1",
+    "routes": "~0.1.1",
+    "redirecter": "0.0.1",
+    "templar": "0.0.7",
+    "ejs": "~0.8.0",
+    "ap": "~0.1.0",
+    "nodemon": "~0.6.23",
+    "routil-body": "0.0.2",
+    "routil-methods": "0.0.1",
+    "mongo-col": "~0.1.17"
+  }
+}
