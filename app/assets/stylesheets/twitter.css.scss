@@ -1,0 +1,55 @@
+* {
+  margin:0px;
+	padding:0px;
+	font-family:arial;
+}
+
+body {
+	margin-top:20px;
+	margin-left:40px;
+}
+
+a img {
+	border:0px;
+}
+
+#twitter_stream {
+	font-family:tahoma;
+	background:#97D9F5;
+	border:1px solid #21BCFF;
+	width:210px;
+	padding:20px;
+	position:relative;
+}
+
+#stream_term {
+	font-size:18px;
+	margin-bottom:10px;
+	color:#00B2FF;
+	font-weight:bold;
+	font-family:tahoma;
+}
+
+#twitter_results {
+	width:200px;
+	background:#F9FFFF;
+	border:1px solid #7EE8FF;
+	padding:5px;
+	height:300px;
+	overflow:auto;
+}
+
+.tweet_result {
+	font-size:11px;
+	line-height:16px;
+	margin-bottom:10px;
+	color:#444;
+}
+
+.tweet_result a {
+	color:#2CC0C6;
+}
+
+.tweet_user {
+	margin-right:5px;
+}
