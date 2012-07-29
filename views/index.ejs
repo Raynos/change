@@ -1,0 +1,19 @@
+<p>Register with one or more of these services:</p>
+
+<ul id="auth">
+<% for (var i = 0; i < services.length; i++) { %>
+ <li id="<%= services[i].name %>"><%- services[i].link %></li>
+<% } %>
+</ul>
+
+<div id="empowered">
+ <a href="http://singly.com/"><img src="/empowered.png" /></a>
+</div>
+
+<div id="access-token-wrapper">
+ <p>Here's your access token for making API calls directly: <input type="text" id="access-token"></input></p>
+</div>
+
+<ul id="profiles"></ul>
+
+<ul id="twitter"></ul>

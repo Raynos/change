@@ -1,16 +1,6 @@
 {
-  "name": "change",
-  "version": "0.0.0",
-  "description": "hack for change",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Raynos/change.git"
-  },
-  "license": "BSD",
+  "name": "node-example",
+  "version": "0.0.1",
   "dependencies": {
     "routil-static": "0.0.1",
     "routes": "~0.1.1",

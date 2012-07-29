@@ -5,6 +5,7 @@ var http = require("http")
     , Templar = require("templar")
     , router = new routes.Router()
     , path = require("path")
+    , errorPage = require("error-page")
     , $static = require("routil-static")({
         uri: path.join(__dirname, "static")
     })
@@ -17,6 +18,10 @@ module.exports = {
 
 router.addRoute("/static/*?", $static)
 router.addRoute("/", require("./routes/home"))
+router.addRoute("/issues", require("./routes/issues"))
+router.addRoute("/issues/:issueId", require("./routes/issuesItem"))
+router.addRoute("/user/signup", require("./routes/user/signup"))
+router.addRoute("/user", require("./routes/user/main.js"))
 
 $static.load("static/**/*.*", function (err) {
     throw err
@@ -25,7 +30,7 @@ $static.load("static/**/*.*", function (err) {
 server.on("request", function (req, res) {
     var route = router.match(req.url)
     if (!route) {
-        return res.end("route not found")
+        return errorPage(req, res, {})(404)
     }
 
     route.fn(req, res, route.params, route.splats)
