@@ -39,5 +39,5 @@ function template(req, res, name, data) {
     Templar(req, res, {
         engine: ejs
         , folder: './templates'
-    })(name, data)
+    })(name, data || {})
 }
