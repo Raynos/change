@@ -7,7 +7,7 @@ NewChange::Application.routes.draw do
   end
   
   resources :issues do
-    resources :sponsorships
+    resource :sponsorships
   end
 
   root :to => 'issues#index'
