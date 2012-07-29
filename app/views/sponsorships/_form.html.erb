@@ -1,0 +1,30 @@
+<%= form_for(@sponsorship) do |f| %>
+  <% if @sponsorship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sponsorship.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @sponsorship.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :plan %><br />
+    <%= f.text_field :plan %>
+  </div>
+  <div class="field">
+    <%= f.submit :class=> "btn btn-inverse btn-large" %>
+
+  </div>
+<% end %>

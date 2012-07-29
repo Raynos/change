@@ -1,16 +1,14 @@
 <html>
-	<h1>
-		<body>
-			Issues
-			<ul>
-				<% @issues.each do |issue| %>
-					<ul>
-						<li><%= @issue.title %></li>
-						<li><%= @issue.description[0,160] %></li>
-						<li><%= @issue.user.location %><%= @issue.user.name %></li>
-					</ul>
-				<% end %>
-			</ul>		
-		</body>
-	</h1>
+	<body>
+		<h1>Issues</h1>
+		<ul>
+			<% @issues.each do |issue| %>
+				<ul>
+					<li><%= link_to issue.title, issue  %></li>
+					<li><%= issue.description[0,160] %></li>
+					<li><%= issue.user.location %><%= issue.user.name %></li>
+				</ul>
+			<% end %>
+		</ul>		
+	</body>
 </html>

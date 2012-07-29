@@ -1,8 +1,10 @@
  <ul class="nav pull-right">
 	<% if user_signed_in? %>
 		<% if current_user.rep_status == true %>
-		<li class="active submit"><a href ="<%= new_issue_path %>"><i class='icon-file icon-white'></i> Champion an Issue</a></li>
-	<% end %>
+			<li class="active submit"><a href ="<%= new_issue_path %>"><i class='icon-file icon-white'></i> Champion an Issue</a></li>
+		<% else %>
+			<li class="active submit"><a href ="<%= "users/user_id/register_rep" %>"><i class='icon-file icon-white'></i> Champion an Issue </a></li>
+		<% end %>
 		<li class="dropdown">
 			<a href="#"
 	    class="dropdown-toggle"
