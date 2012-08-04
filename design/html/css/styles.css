@@ -70,6 +70,7 @@ body {
 	color: white;
 	text-shadow: #006699 -1px -1px 0;
 	border-color: #006699;
+	width: auto;
 }
 
 input, textarea {
@@ -95,18 +96,8 @@ label {
 }
 
 .right {
-	margin-left: 780px;
-	margin-top: 20px;
-}
-
-.right2 {
-	margin-left: 380px;
-	margin-top: 20px;
-}
-
-.right3 {
-	margin-left: 480px;
-	margin-top: 20px;
+	float: right;
+	clear: both;
 }
 
 .formItem span {
@@ -161,7 +152,7 @@ label {
 	margin: 13px 0 0 0;
 }
 
-.header .menu .menu-item {
+.header .menu a {
 	font-size: 13px;
 	color: #BDDBDD;
 	margin: 13px 26px 5px 5px;
