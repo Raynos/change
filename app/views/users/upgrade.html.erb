@@ -2,15 +2,20 @@
 			<div class="column">
 				<div class="loginForm">
 			        <h1>Become A Champion</h1>
-			        <p>Sign up as an official change maker in our community</p>
-			        <p><label>1. Add your Photo:</label><a href="" class="button">Upload Photo</a></p>
-			        <p><label>2. Add your Location</label></p>
-			        <p><input type="text" placeholder="e.g., San Francisco, CA" /></p>
-			        <p><label>3. Add your Bio</label></p>
-			        <p><textarea rows="5" placeholder="This is who you are and what you've done in the past."></textarea></p>
-			        <p><label>4. Add your Twitter Account</label></p>
-			        <p><input type="text" placeholder="e.g., @ilobby" /></p>
-			        <div class="right"><a href="" class="button">Submit</a></div>
+			        <%= form_for(current_user, :html => { :method => :put }) do |f| %>
+				        <p>Sign up as an official change maker in our community</p>
+				        <p><label>1. Add your Photo:</label><a href="" class="button">Upload Photo</a></p>
+				        <p><label>2. Add your Location</label></p>
+				        <p class="formWideItem"><%= f.text_field :location, :placeholder => "e.g., San Francisco, CA" %></p>
+				        <p><label>3. Add your Bio</label></p>
+				        <p class="formWideItem"><%= f.text_area :bio, :placeholder => "This is who you are and what you've done in the past." %></p>
+				        <p><label>4. Add your Twitter Account</label></p>
+				        <p class="formWideItem"><%= f.text_field :twitter_handle, :placeholder => "e.g., @ilobby" %></p>
+						<%= f.hidden_field :rep_status, :value => "true" %>
+						<%= f.hidden_field :name %>
+						<%= f.hidden_field :password %>
+				        <div class="right"><%= f.submit 'Submit', :class => 'button' %></div>
+			        <% end %>
 			    </div>
 			 </div>
 		</div>
