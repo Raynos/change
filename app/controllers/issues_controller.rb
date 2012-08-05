@@ -15,7 +15,8 @@ class IssuesController < ApplicationController
   end
 
   def create
-    @issue = current_user.issues.new(params[:issue])
+    @issue = Issue.new(params[:issue])
+    @issue.rep_id = current_user.id
     if @issue.save
       flash[:messages] = "Thank you for your submission!"
       redirect_to root_path

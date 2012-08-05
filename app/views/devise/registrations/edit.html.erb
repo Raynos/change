@@ -10,6 +10,7 @@
 						<p class="formItem"><span>New Password</span><%= f.password_field :password, :autocomplete => "off" %></p>
 						<i>(leave blank if you don't want to change it)</i>
 						<p class="formItem"><span>Confirmation</span><%= f.password_field :password_confirmation %></p>
+						<p class="formItem"><span>Twitter Handle</span><%= f.text_field :twitter_handle %></p>
 						<% if current_user.rep_status == true %>
 							<p class="formItem"><span>Your Location</span><%= f.text_field :location %></p>
 							<p class="formItem"><span>Your Bio</span></p>

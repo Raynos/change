@@ -3,8 +3,9 @@
         <div class="mini-pict">
             <img src="assets/pict.png">
         </div>
-        <div class="name"><%= issue.user.name %></div>
-        <div class="location"><%= issue.user.location %></div>
+        <% @rep = User.find(issue.rep_id) %>
+        <div class="name"><%= @rep.name %></div>
+        <div class="location"><%= @rep.location %></div>
         <div class="title"><%= issue.title[0,60] %></div>
         <div class="description"><%= issue.description[0, 160] %></div>
         <div class="amount"><%= issue.sponsorships.sum(:amount) %></div>

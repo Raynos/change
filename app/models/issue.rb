@@ -3,8 +3,9 @@ class Issue < ActiveRecord::Base
   # validate_presence_of :user
 
   belongs_to :user
-  has_many :users, :through => :sponsorships
   has_many :sponsorships
+  has_many :users, :through => :sponsorships
+  
 
   def self.search(search)
     search_condition = "%" + search + "%"
