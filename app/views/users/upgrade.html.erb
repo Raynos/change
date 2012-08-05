@@ -2,7 +2,7 @@
 			<div class="column">
 				<div class="loginForm">
 			        <h1>Become A Champion</h1>
-			        <%= form_for(current_user, :html => { :method => :put }) do |f| %>
+			        <%= form_for(current_user) do |f| %>
 				        <p>Sign up as an official change maker in our community</p>
 				        <p><label>1. Add your Photo:</label><a href="" class="button">Upload Photo</a></p>
 				        <p><label>2. Add your Location</label></p>
@@ -12,8 +12,6 @@
 				        <p><label>4. Add your Twitter Account</label></p>
 				        <p class="formWideItem"><%= f.text_field :twitter_handle, :placeholder => "e.g., @ilobby" %></p>
 						<%= f.hidden_field :rep_status, :value => "true" %>
-						<%= f.hidden_field :name %>
-						<%= f.hidden_field :password %>
 				        <div class="right"><%= f.submit 'Submit', :class => 'button' %></div>
 			        <% end %>
 			    </div>

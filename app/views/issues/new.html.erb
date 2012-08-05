@@ -1,1 +1,17 @@
-<%= render 'form' %>
+		<div class="content">
+			<div class="column">
+				<div class="loginForm">
+					<h1>Add Your Cause</h1>
+					<%= form_for(Issue.new) do |f| %>
+						<p>Tell the world what you are going to fix</p>
+    					<p><label>1. Title</label><small>&nbsp;(less than 60 characters)</small></p>
+    					<p class="formWideItem"><%= f.text_field :title, :placeholder => "e.g., Ending Politics in California Education" %></p>
+    					<p><label>2. Description</label><small>&nbsp;(less than 160 characters)</small></p>
+    					<p class="formWideItem"><%= f.text_area :description, :placeholder => "e.g., A poor education system for our children is unacceptable" %></p>
+    				    <p><label>3. Plan</label></p>
+    					<p class="formWideItem"><%= f.text_area :plan, :placeholder => "Give a brief description of what you're going to do to bring that change you want to see to your family, friends, community world." %></p>
+					    <div class="right"><%= f.submit 'Submit', :class => 'button' %></div>
+					<% end %>
+				</div>
+			</div>
+		</div>
