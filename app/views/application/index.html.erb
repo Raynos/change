@@ -4,8 +4,9 @@
         <div class="separation-line"></div>
         <div class="featured">Feature Causes</div>
 
-		<% issues = @issues %>
-        <%= render :partial => 'issue', :locals => {:issues => issues} %>
+		<% @issues.each do |issue| %>
+        	<%= render :partial => 'issues/show_list_item', :locals => {:issue => issue} %>
+		<% end %>
         
         <div class="right"><a class="button" href="/">See all</a></div>
     </div>

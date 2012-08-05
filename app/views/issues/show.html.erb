@@ -1,31 +1,27 @@
-<head><h3><%= @issue.title %></h3></head>
-<body>
-	<div>
-		<%= link_to "Sponsor this Issue", new_issue_sponsorships_path(params[:id]) %>
-	</div>
-	<div>
-		<%= @issue.description %>
-	</div>
-	<div>
-		<%= @issue.plan %>
-	</div>
-	<div>
-		<% @rep = User.find(@issue.rep_id) %>
-		<%= @rep.name %>
-	</div>
-	<div>
-		<%= @rep.bio %>
-	</div>
-	<div>
-		<%= @rep.email %>
-	</div>	
-	<div>
-		<% twitter_puller %>
-		<ul>
-			<% @rep_twitter.each do |tweet| %>
-				<li><%= tweet.text %></li>
-			<% end %>
-		</ul>
-	</div>
-
-</body>
+		<div class="content">
+			<div class="column">
+				<div class="big-pict"><img src="/assets/pict.png" /></div>
+				<div class="raised">Total pledged to cause: <span>$<%= @issue.sponsorships.sum(:amount) %></span></div>
+				<h1><%= @rep.name %></h1>
+				<h2><%= @rep.location %></h2>
+				<h1>&nbsp;</h1>
+				<h1><%= @issue.title %></h1>
+				<p><%= @issue.description %></p>
+				<p class="causeDescription"><%= @issue.plan %></p>
+				<div class="right">
+					<% if current_user == @rep %>
+						<%= link_to "Delete", issue_path(@issue), :method => :delete, :class=>"button" %><a href="" class="button">Share</a>
+					<% else %>
+						<%= link_to "Sponsor this Issue", new_issue_sponsorships_path(@issue), :class=>"button" %>
+					<% end %>
+				</div>
+			</div>
+			<div>
+				<% twitter_puller %>
+				<ul>
+					<% @rep_twitter.each do |tweet| %>
+						<li><%= tweet.text %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>

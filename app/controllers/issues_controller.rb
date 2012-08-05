@@ -1,14 +1,11 @@
 class IssuesController < ApplicationController
   
-  def index
-    @issues = Kaminari::paginate_array(Issue.find(:all)).page(params[:page]).per(10)
-  end
-  
   def show
     @issue = Issue.find(params[:id])
+    @rep = User.find(@issue.rep_id)
   end
   
-  def delete
+  def destroy
     @issue = Issue.find(params[:id])
     @issue.destroy
     redirect_to root_url

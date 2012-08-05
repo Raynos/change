@@ -1,11 +1,15 @@
 class SponsorshipsController < ApplicationController
 
 	def new
-		@sponsorship = current_user.sponsorships.new(params[:sponsorship])
-		@sponsorship.issue_id = params[:issue_id]
-		@sponsorship.amount = 10
-		@sponsorship.save
-		redirect_to root_path
+	  if user_signed_in?
+      @sponsorship = current_user.sponsorships.new(params[:sponsorship])
+      @sponsorship.issue_id = params[:issue_id]
+      @sponsorship.amount = 10
+      @sponsorship.save
+      redirect_to root_path
+	  else
+      redirect_to new_user_session_path
+	  end
 	end
 
 	def create
