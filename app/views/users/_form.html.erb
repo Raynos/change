@@ -1,29 +1,14 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
-      <ul>
-      <% @link.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="content">
+      <div class="column">
+        <h1>Become A Champion</h1>
+        <p>Sign up as an official change maker in our community</p>
+        <p><label>1. Add your Photo:</label><a href="" class="button">Upload Photo</a></p>
+        <p><label>2. Add your Location</label></p>
+        <p><input type="text" placeholder="e.g., San Francisco, CA" /></p>
+        <p><label>3. Add your Bio</label></p>
+        <p><textarea rows="5" placeholder="This is who you are and what you've done in the past."></textarea></p>
+        <p><label>4. Add your Twitter Account</label></p>
+        <p><input type="text" placeholder="e.g., @ilobby" /></p>
+        <div class="right"><a href="" class="button">Submit</a></div>
+      </div>
     </div>
-  <% end %>
-  <% flash[:messages] = "You must register as a representative first!" %>
-
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-    <div class="field">
-    <%= f.label :twitter_handle %><br />
-    <%= f.text_field :twitter_handle %>
-  </div>
-  <div class="field">
-    <%= f.submit :class=> "btn btn-inverse btn-large" %>
-  </div>
-<% end %>

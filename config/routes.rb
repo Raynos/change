@@ -1,8 +1,9 @@
 NewChange::Application.routes.draw do
   devise_for :users
+  
   resources :users do
-    member do
-      get 'register_rep'
+    collection do
+      get 'upgrade'
     end
   end
   
