@@ -4,6 +4,7 @@ gem 'rails', '3.2.7'
 gem 'devise'
 gem 'bootstrap-sass', '~> 2.0.4.0'
 gem 'kaminari'
+gem 'twitter'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729113310) do
+ActiveRecord::Schema.define(:version => 20120805064006) do
 
   create_table "issues", :force => true do |t|
     t.text     "description"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20120729113310) do
     t.string   "title"
     t.integer  "rep_id"
   end
+
+  add_index "issues", ["rep_id"], :name => "index_issues_on_rep_id"
 
   create_table "sponsorships", :force => true do |t|
     t.integer  "amount"
